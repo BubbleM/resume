@@ -2,9 +2,14 @@ let gulp = require('gulp');
 let sass = require('gulp-sass');
 let prefix = require('gulp-autoprefixer');
 
+function handleError(err) {
+  console.log(err.toString());
+  this.emit('end');
+}
+
 gulp.task('sass', () => {
   gulp.src('styles/main.scss')
-    .pipe(sass())
+    .pipe(sass()).on('error', handleError)
     .pipe(prefix())
     .pipe(gulp.dest('../styles'));
 });

@@ -12,7 +12,11 @@ $divider-color:        #BDBDBD;
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;// 让中间内容更柔和
-  color: #727272;
+  color: $secondary-text-color;
+}
+
+* {
+  box-sizing: border-box; // 添加padding或border时元素的布局不会变大
 }
 
 a {
@@ -26,11 +30,23 @@ a {
 }
 
 .app-header {
+  padding: 10px;
   background-color: $primary-color;
   height: 80px;
+  display: flex;
+  align-items: center; // 让元素水平垂直居中
+  justify-content: space-between;
   border-bottom: 2px solid #fff59d;
   flex-shrink: 0;
+  color: $primary-color-text;
+  a {
+    color: $primary-color-text;
+  }
 }
+
+/*.app-header > * {
+  border: 1px solid red;
+}*/
 
 .content {
   background-color: #fafafa;
