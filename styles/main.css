@@ -40,6 +40,10 @@ a {
   color: #FFFFFF; }
   .app-header a {
     color: #FFFFFF; }
+  .app-header .button {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    border-radius: 4px; }
 
 /*.app-header > * {
   border: 1px solid red;
@@ -50,7 +54,7 @@ a {
       -ms-flex-positive: 1;
           flex-grow: 1;
   line-height: 1.8;
-  padding: 15px;
+  padding: 16px;
   overflow-y: scroll; }
 
 .app-footer {
@@ -78,3 +82,7 @@ a {
       color: white;
       text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
       padding-bottom: 10px; }
+    .app-footer a:hover {
+      border-bottom: 4px solid #FF4081; }
+  .app-footer a.active {
+    border-bottom: 4px solid #FF4081; }

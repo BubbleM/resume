@@ -9,7 +9,7 @@ function handleError(err) {
   this.emit('end');
 }
 
-gulp.task('browser-sync',['build', 'sass'], () => {
+gulp.task('browser-sync',['build', 'sass', 'cp'], () => {
   browserSync({
     server: {
       baseDir: '..' // 基地建在那个文件夹,即index.html等
@@ -31,10 +31,10 @@ gulp.task('sass', () => {
     .pipe(browserSync.reload({stream: true}));
 });
 
-/*gulp.task('cp', () => {
-  gulp.src('index.html')
+gulp.task('cp', () => {
+  return gulp.src('js/main.js', {base: '.'})
     .pipe(gulp.dest('..'));
-});*/
+});
 
 gulp.task('rebuild', ['build'], () => {
   browserSync.reload(); // 浏览器自动刷新
@@ -43,6 +43,7 @@ gulp.task('rebuild', ['build'], () => {
 gulp.task('watch', () => {
   gulp.watch(['**/*.html'], ['rebuild']);
   gulp.watch(['styles/*.scss'], ['sass']);
+  gulp.watch(['js/main.js'], ['cp']);
 });
 
 gulp.task('default', ['browser-sync', 'watch']);
