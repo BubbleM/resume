@@ -2,6 +2,7 @@ let gulp = require('gulp');
 let sass = require('gulp-sass');
 let prefix = require('gulp-autoprefixer');
 let wrap = require('gulp-wrap');
+let browserSync = require('browser-sync');
 
 function handleError(err) {
   console.log(err.toString());
