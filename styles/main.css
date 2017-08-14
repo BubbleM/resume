@@ -179,7 +179,7 @@ a {
   margin-bottom: 30px;
   font-size: 15px; }
   .about .background {
-    background: url("https://b-ssl.duitang.com/uploads/item/201703/27/20170327222048_UzsHi.thumb.700_0.jpeg");
+    background: url("/assets/aboutbg.jpeg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
