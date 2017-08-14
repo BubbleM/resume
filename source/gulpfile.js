@@ -32,7 +32,7 @@ gulp.task('sass', () => {
 });
 
 gulp.task('cp', () => {
-  return gulp.src('js/main.js', {base: '.'})
+  return gulp.src(['js/main.js', 'assets/*'], {base: '.'})
     .pipe(gulp.dest('..'));
 });
 
